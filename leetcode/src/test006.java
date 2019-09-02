@@ -1,3 +1,4 @@
+//Z字形变换
 public class test006 {
     public String convert(String s, int numRows) {
         if (numRows == 1) return s;
