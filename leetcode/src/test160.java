@@ -20,6 +20,12 @@ public class test160 {
 //            [1,5]
 //            3
 //            2
+//
+//            1
+//            [1]
+//            [1]
+//            0
+//            0
 
 
 //    //暴力法
@@ -76,7 +82,7 @@ public class test160 {
 //        ListNode p1 = headA;
 //        ListNode p2 = headB;
 //
-//        //整个循环为链表A和链表B加起来的长度
+//        //整个循环为链表A和链表B加起来的长度,到最后相同的那一段必然会相遇，不相遇则两链表不相交
 //        while (p1 != null && p2 != null && p1 != p2) {
 //            p1 = p1.next;
 //            p2 = p2.next;
@@ -86,6 +92,29 @@ public class test160 {
 //            if (p1 == null) p1 = headB;
 //            if (p2 == null) p2 = headA;
 //        }
+//        return p1;
+//    }
+
+//    //双指针法
+//    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+//        if (headA == null || headB == null) return null;
+//        ListNode p1 = headA;
+//        ListNode p2 = headB;
+//
+//        while (p1 != p2) {
+//            if (p1 != null) {
+//                p1 = p1.next;
+//            } else {
+//                p1 = headB;
+//            }
+//
+//            if (p2 != null) {
+//                p2 = p2.next;
+//            } else {
+//                p2 = headA;
+//            }
+//        }
+//
 //        return p1;
 //    }
 
