@@ -91,19 +91,12 @@ public class test160 {
 
     //双指针法（优化）
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) return null;
         ListNode p1 = headA;
         ListNode p2 = headB;
 
-        //整个循环为链表A和链表B加起来的长度
-        while (p1 != null && p2 != null && p1 != p2) {
-            p1 = p1.next;
-            p2 = p2.next;
-
-            if (p1 == p2) return p1;
-
-            if (p1 == null) p1 = headB;
-            if (p2 == null) p2 = headA;
+        while (p1 != p2) {
+            p1 = p1 != null ? p1.next : headB;
+            p2 = p2 != null ? p2.next : headA;
         }
         return p1;
     }
